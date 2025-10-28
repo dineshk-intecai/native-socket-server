@@ -20,7 +20,8 @@ io.on('connection', (socket) => {
 
     socket.on('location_update', ({ lat, lng, partnerId }) => {
         console.log(`Location update : ${lat}, ${lng} - ${partnerId}`);
-        io.emit('live_location', { lat, lng, partnerId });
+        io.emit('live_location', { lat, lng });
+        io.emit('live_location_partnerId', { partnerId });
     });
 
     socket.on('disconnect', () => {
