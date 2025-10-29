@@ -9,6 +9,8 @@ const io = new Server(server, {
         origin: "*"
     },
     transports: ["websocket", "polling"],
+    methods: ["GET", "POST"],
+    path: "/socket.io/"
 });
 
 app.get('/', (req, res) => {
